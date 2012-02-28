@@ -1,0 +1,13 @@
+.title{:style=>'font-weight:bold;color:red;'} POPHOUR
+
+-if logged_in?
+  .tip
+    如果你看到这行字，说明登录成功了。用户名:#{current_user.name}，邮箱:#{current_user.email}
+  .logout
+    =link_to '登出',"http://dev.sso.mindpin.com/logout?from=#{_this_app_name}"
+-else
+  .tip
+    目前未登录
+  .login
+    =link_to '登录','/login'
+    =link_to '新浪微博登陆',"http://dev.sso.mindpin.com/connect_tsina?app=#{_this_app_name}"

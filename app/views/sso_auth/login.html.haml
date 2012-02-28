@@ -1,0 +1,19 @@
+:ruby
+  sso_login_url = "http://dev.sso.mindpin.com/login";
+
+%form.login{:action=>sso_login_url, :method=>:post, :target=>'sso_login_frame'}
+  .field
+    %label 邮箱
+    =text_field_tag :email, ''
+  .field
+    %label 密码
+    =text_field_tag :password, ''
+  .field
+    %label 记住我
+    =check_box_tag :remember_me, 'true', true
+  .field
+    %label 应用
+    =text_field_tag :app, _this_app_name, :readonly=>true
+  .field
+    %a.submit{:href=>'javascript:;'} 确定
+  .error{:style=>'color:red;font-weight:bold;display:none;margin-top:10px;font-size:12px;'}

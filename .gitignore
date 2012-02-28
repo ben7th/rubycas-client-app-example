@@ -1,0 +1,4 @@
+*.log
+.loadpath
+.project
+tmp
